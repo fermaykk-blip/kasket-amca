@@ -644,7 +644,7 @@ try{const bc=new BroadcastChannel('kasket');bc.onmessage=e=>{const m=e.data||{};
 
 /* deneme: sahneye dokunmak rastgele hediye gönderir; #test adresi deneme tuşlarını açar */
 const NAMES=['Ahmet','Zeynep','Mehmet','Elif','Can','Ayşe','Burak','Selin','Emre','Fatma'];
-man.style.cursor='pointer';man.addEventListener('click',()=>gift(R(NAMES),R([1,1,5,5,30,100,500])));
+if(location.hash==='#test'){man.style.cursor='pointer';man.addEventListener('click',()=>gift(R(NAMES),R([1,1,5,5,30,100,500])))}
 document.querySelectorAll('button[data-v]').forEach(b=>b.addEventListener('click',()=>gift(R(NAMES),+b.dataset.v)));
 $('idleBtn').addEventListener('click',()=>idle(3));
 $('reset').addEventListener('click',()=>{total=0;lv=0;board={};lastGift=Date.now();scene();hud();speak(L.hello)});
